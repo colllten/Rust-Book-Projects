@@ -10,5 +10,15 @@ fn main() {
     io::stdin()
         .read_line(&mut number)
         .expect("Error reading from stdin");
+    
+    //Converting to u32
+    let number: u32 = match number.trim().parse() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("Error parsing.");
+            0
+        }
+    };
+
     println!("{number}");
 }
