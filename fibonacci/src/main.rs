@@ -19,6 +19,15 @@ fn main() {
             0
         }
     };
+    
+    let result = generate_fib(number);
+    println!("{result}");
+}
 
-    println!("{number}");
+fn generate_fib(number: u32) -> u32 {
+    if number == 0 || number == 1 {
+        return 1;
+    } else {
+        return generate_fib(number - 1) + generate_fib(number - 2);
+    }
 }
